@@ -13,7 +13,7 @@ const upload = multer({
         file: (req, file) => {
             return {
                 bucketName: "profiles",
-                filename: `${Date.now()}-${file.originalname}`
+                filename: `${Date.now()}.${file.originalname.split('.').pop()}`
             }
         }
     }),
