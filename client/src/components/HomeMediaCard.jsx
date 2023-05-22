@@ -44,7 +44,7 @@ const HomeMediaCard = ({ file }) => {
     const handleDownloadFile = async () => {
         try {
             const response = await axios({
-                url: `/api/v1/media/get/${file?.filename}`,
+                url: `/api/v1/media/download/${file?.filename}`,
                 method: "GET",
                 responseType: 'blob'
             })

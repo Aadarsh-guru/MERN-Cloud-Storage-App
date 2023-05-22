@@ -3,7 +3,7 @@ import dotenv from "dotenv"
 import multer from 'multer'
 import { GridFsStorage } from 'multer-gridfs-storage'
 import { requireSignIn } from '../middlewares/authMiddleware.js'
-import { deleteMediaController, editMediaController, getAllMediaController, getMediaController, getUserMediaController, loadMoreFilesController, searchProductController, uploadMediaController } from "../controller/mediaController.js";
+import { deleteMediaController, downloadMediaController, editMediaController, getAllMediaController, getMediaController, getUserMediaController, loadMoreFilesController, searchProductController, uploadMediaController } from "../controller/mediaController.js";
 const router = Router();
 dotenv.config()
 
@@ -34,5 +34,7 @@ router.put('/edit/:id', requireSignIn, editMediaController)
 router.get('/search/:keyword', searchProductController)
 
 router.get('/more-files/:page', loadMoreFilesController)
+
+router.get('/download/:filename', downloadMediaController)
 
 export default router;
