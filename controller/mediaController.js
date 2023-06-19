@@ -154,6 +154,6 @@ export const deleteAllUserFilesController = async (userId) => {
         })
         return true;
     } catch (error) {
-        return res.status(500).json({ message: 'Error while getting the Media.', error, success: false })
+        return res.status(500).json({ message: 'Error while Deleting All the user Media.', error, success: false })
     }
 }
